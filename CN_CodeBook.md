@@ -53,9 +53,10 @@ The ```test``` data set is stored in three variables named similarly to the thre
 
 ## Step 2: Merge 'training' and 'test' data sets and rename columns and activity IDs
 
-``` merge.Data``` : stores the merged raw data from 'train.Data' and 'test.Data'. Variables names for each column were added using the ```features``` variable and names were converted into valid characters strings.
 
 ``` merge.Activities``` : stores the merged numerical activity IDs from 'train.Activity' and 'test.Activity'. The numerical values were then converted into actual descriptions using the 'activity.labels' variable
+
+``` merge.Data``` : stores the merged raw data from 'train.Data' and 'test.Data'. Variables names for each column were added using the ```features``` variable and names were converted into valid characters strings.
 
 ``` merge.Subjects``` : stores the merged numerical subject IDs from 'train.Subject' and 'test.Subject'
 

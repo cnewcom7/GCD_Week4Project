@@ -1,4 +1,4 @@
-# Load the tidyverse package which contains dplyr
+  # Load the tidyverse package which contains dplyr
 library(tidyverse)
 
 ### Step 1:
@@ -19,18 +19,18 @@ features <- read.table('features.txt')
 
 ### Step 2:
 
-# Merge the raw numerical data for the 'Training' and 'Test' data sets
-# Rename the generic column names to match the features/calcultions from the 'features.txt' file
-# Convert all column names to valid names (replaces invalid characters with '.')
-merge.Data <- rbind(train.Data, test.Data) 
-colnames(merge.Data) <- make.names(names = features$V2, unique = TRUE, allow_ = TRUE)
-
 # Merge the numbers assigned for each 'Activity' from the 'training' and 'test' data sets
 # Rename the column from the generic name to 'ActivityID'
 # Replace the numeric value for each activity with the true description from the 'activity_labels.txt' file
 merge.Activities <- rbind(train.Activity, test.Activity)
 colnames(merge.Activities) <- c('ActivityID')
 merge.Activities$ActivityID <- activity.labels[merge.Activities$ActivityID, 2]
+
+# Merge the raw numerical data for the 'Training' and 'Test' data sets
+# Rename the generic column names to match the features/calcultions from the 'features.txt' file
+# Convert all column names to valid names (replaces invalid characters with '.')
+merge.Data <- rbind(train.Data, test.Data) 
+colnames(merge.Data) <- make.names(names = features$V2, unique = TRUE, allow_ = TRUE)
 
 # Merge the Subject Numbers from the 'training' and 'test' data sets
 # Rename its column from the generic assigned name
